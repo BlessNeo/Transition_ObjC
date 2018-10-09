@@ -3,5 +3,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MagicMoveDetailCtrl : UIViewController
+<
+UINavigationControllerDelegate
+>
+@property (nonatomic, strong) UIImageView *imgViewDetail;
 
 @end

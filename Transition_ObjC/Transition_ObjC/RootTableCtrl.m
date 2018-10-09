@@ -68,7 +68,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.navigationController pushViewController:[[NSClassFromString(self.arrCtrls[indexPath.row]) alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[NSClassFromString(self.arrCtrls[indexPath.row]) alloc] init]
+                                         animated:YES];
 }
 
 /*

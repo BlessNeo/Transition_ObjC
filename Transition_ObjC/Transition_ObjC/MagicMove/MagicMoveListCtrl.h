@@ -3,5 +3,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MagicMoveListCtrl : UICollectionViewController
+/**
+ *  记录当前点击的indexPath
+ */
+@property (nonatomic, strong) NSIndexPath *currentIndexPath;
 
 @end
