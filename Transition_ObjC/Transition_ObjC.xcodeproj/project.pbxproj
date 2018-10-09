@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		D319DA42216C417B0016A59D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DA41216C417B0016A59D /* AppDelegate.m */; };
-		D319DA45216C417B0016A59D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DA44216C417B0016A59D /* ViewController.m */; };
 		D319DA48216C417B0016A59D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D319DA46216C417B0016A59D /* Main.storyboard */; };
 		D319DA4A216C417D0016A59D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D319DA49216C417D0016A59D /* Assets.xcassets */; };
 		D319DA4D216C417D0016A59D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D319DA4B216C417D0016A59D /* LaunchScreen.storyboard */; };
 		D319DA50216C417D0016A59D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DA4F216C417D0016A59D /* main.m */; };
 		D319DA5A216C417D0016A59D /* Transition_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DA59216C417D0016A59D /* Transition_ObjCTests.m */; };
 		D319DA65216C417D0016A59D /* Transition_ObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DA64216C417D0016A59D /* Transition_ObjCUITests.m */; };
+		D319DA82216C4BD70016A59D /* RootTableCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DA81216C4BD70016A59D /* RootTableCtrl.m */; };
+		D319DA86216C4F0E0016A59D /* MagicMoveListCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DA85216C4F0E0016A59D /* MagicMoveListCtrl.m */; };
+		D319DA89216C4F440016A59D /* MagicMoveDetailCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DA88216C4F440016A59D /* MagicMoveDetailCtrl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +40,6 @@
 		D319DA3D216C417B0016A59D /* Transition_ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transition_ObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D319DA40216C417B0016A59D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D319DA41216C417B0016A59D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D319DA43216C417B0016A59D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D319DA44216C417B0016A59D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D319DA47216C417B0016A59D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D319DA49216C417D0016A59D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D319DA4C216C417D0016A59D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,12 @@
 		D319DA60216C417D0016A59D /* Transition_ObjCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Transition_ObjCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D319DA64216C417D0016A59D /* Transition_ObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Transition_ObjCUITests.m; sourceTree = "<group>"; };
 		D319DA66216C417D0016A59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D319DA80216C4BD70016A59D /* RootTableCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableCtrl.h; sourceTree = "<group>"; };
+		D319DA81216C4BD70016A59D /* RootTableCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableCtrl.m; sourceTree = "<group>"; };
+		D319DA84216C4F0E0016A59D /* MagicMoveListCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicMoveListCtrl.h; sourceTree = "<group>"; };
+		D319DA85216C4F0E0016A59D /* MagicMoveListCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicMoveListCtrl.m; sourceTree = "<group>"; };
+		D319DA87216C4F440016A59D /* MagicMoveDetailCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicMoveDetailCtrl.h; sourceTree = "<group>"; };
+		D319DA88216C4F440016A59D /* MagicMoveDetailCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicMoveDetailCtrl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,15 +107,16 @@
 		D319DA3F216C417B0016A59D /* Transition_ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				D319DA83216C4EBA0016A59D /* MagicMove */,
 				D319DA40216C417B0016A59D /* AppDelegate.h */,
 				D319DA41216C417B0016A59D /* AppDelegate.m */,
-				D319DA43216C417B0016A59D /* ViewController.h */,
-				D319DA44216C417B0016A59D /* ViewController.m */,
 				D319DA46216C417B0016A59D /* Main.storyboard */,
 				D319DA49216C417D0016A59D /* Assets.xcassets */,
 				D319DA4B216C417D0016A59D /* LaunchScreen.storyboard */,
 				D319DA4E216C417D0016A59D /* Info.plist */,
 				D319DA4F216C417D0016A59D /* main.m */,
+				D319DA80216C4BD70016A59D /* RootTableCtrl.h */,
+				D319DA81216C4BD70016A59D /* RootTableCtrl.m */,
 			);
 			path = Transition_ObjC;
 			sourceTree = "<group>";
@@ -130,6 +137,17 @@
 				D319DA66216C417D0016A59D /* Info.plist */,
 			);
 			path = Transition_ObjCUITests;
+			sourceTree = "<group>";
+		};
+		D319DA83216C4EBA0016A59D /* MagicMove */ = {
+			isa = PBXGroup;
+			children = (
+				D319DA84216C4F0E0016A59D /* MagicMoveListCtrl.h */,
+				D319DA85216C4F0E0016A59D /* MagicMoveListCtrl.m */,
+				D319DA87216C4F440016A59D /* MagicMoveDetailCtrl.h */,
+				D319DA88216C4F440016A59D /* MagicMoveDetailCtrl.m */,
+			);
+			path = MagicMove;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D319DA45216C417B0016A59D /* ViewController.m in Sources */,
 				D319DA50216C417D0016A59D /* main.m in Sources */,
 				D319DA42216C417B0016A59D /* AppDelegate.m in Sources */,
+				D319DA82216C4BD70016A59D /* RootTableCtrl.m in Sources */,
+				D319DA89216C4F440016A59D /* MagicMoveDetailCtrl.m in Sources */,
+				D319DA86216C4F0E0016A59D /* MagicMoveListCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
