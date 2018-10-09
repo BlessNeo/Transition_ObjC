@@ -30,6 +30,7 @@
 		D319DAB4216C5B410016A59D /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DAAA216C5B410016A59D /* MASViewConstraint.m */; };
 		D319DAB5216C5B410016A59D /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DAAB216C5B410016A59D /* MASViewAttribute.m */; };
 		D319DAB8216C5C910016A59D /* MagicMoveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DAB7216C5C910016A59D /* MagicMoveTransition.m */; };
+		D319DABC216CAA940016A59D /* BZInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DABB216CAA940016A59D /* BZInteractiveTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		D319DAAB216C5B410016A59D /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
 		D319DAB6216C5C910016A59D /* MagicMoveTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicMoveTransition.h; sourceTree = "<group>"; };
 		D319DAB7216C5C910016A59D /* MagicMoveTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicMoveTransition.m; sourceTree = "<group>"; };
+		D319DABA216CAA940016A59D /* BZInteractiveTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BZInteractiveTransition.h; sourceTree = "<group>"; };
+		D319DABB216CAA940016A59D /* BZInteractiveTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BZInteractiveTransition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,7 @@
 		D319DA3F216C417B0016A59D /* Transition_ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				D319DAB9216CA9C00016A59D /* Transition */,
 				D319DA91216C5B060016A59D /* Vendor */,
 				D319DA83216C4EBA0016A59D /* MagicMove */,
 				D319DA40216C417B0016A59D /* AppDelegate.h */,
@@ -186,6 +190,8 @@
 		D319DA83216C4EBA0016A59D /* MagicMove */ = {
 			isa = PBXGroup;
 			children = (
+				D319DAB6216C5C910016A59D /* MagicMoveTransition.h */,
+				D319DAB7216C5C910016A59D /* MagicMoveTransition.m */,
 				D319DA84216C4F0E0016A59D /* MagicMoveListCtrl.h */,
 				D319DA85216C4F0E0016A59D /* MagicMoveListCtrl.m */,
 				D319DA87216C4F440016A59D /* MagicMoveDetailCtrl.h */,
@@ -193,8 +199,6 @@
 				D319DA8A216C54D00016A59D /* MagicMoveListCell.h */,
 				D319DA8B216C54D00016A59D /* MagicMoveListCell.m */,
 				D319DA8F216C55190016A59D /* MagicMoveListCell.xib */,
-				D319DAB6216C5C910016A59D /* MagicMoveTransition.h */,
-				D319DAB7216C5C910016A59D /* MagicMoveTransition.m */,
 			);
 			path = MagicMove;
 			sourceTree = "<group>";
@@ -237,6 +241,15 @@
 				D319DAAB216C5B410016A59D /* MASViewAttribute.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		D319DAB9216CA9C00016A59D /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				D319DABA216CAA940016A59D /* BZInteractiveTransition.h */,
+				D319DABB216CAA940016A59D /* BZInteractiveTransition.m */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +396,7 @@
 				D319DAB8216C5C910016A59D /* MagicMoveTransition.m in Sources */,
 				D319DAB1216C5B410016A59D /* NSArray+MASAdditions.m in Sources */,
 				D319DA89216C4F440016A59D /* MagicMoveDetailCtrl.m in Sources */,
+				D319DABC216CAA940016A59D /* BZInteractiveTransition.m in Sources */,
 				D319DA8D216C54D00016A59D /* MagicMoveListCell.m in Sources */,
 				D319DAB5216C5B410016A59D /* MASViewAttribute.m in Sources */,
 				D319DAB3216C5B410016A59D /* MASConstraint.m in Sources */,
@@ -556,6 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LLQ4E8YA2P;
 				INFOPLIST_FILE = Transition_ObjC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -573,6 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LLQ4E8YA2P;
 				INFOPLIST_FILE = Transition_ObjC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

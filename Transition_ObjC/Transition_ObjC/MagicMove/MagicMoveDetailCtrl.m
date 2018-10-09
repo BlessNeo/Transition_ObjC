@@ -3,8 +3,11 @@
 #import "MagicMoveDetailCtrl.h"
 #import "MagicMoveTransition.h"
 #import "Masonry.h"
+#import "BZInteractiveTransition.h"
 
 @interface MagicMoveDetailCtrl ()
+///手势交互
+@property (nonatomic, strong) BZInteractiveTransition *interfaceTransition;
 
 @end
 
@@ -12,12 +15,11 @@
 
 - (void)dealloc
 {
-    NSLog(@"%@ destroyed",NSStringFromClass([self class]));
+    NSLog(@"这个类%@ destroyed",NSStringFromClass([self class]));
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.title = NSLocalizedString(@"详情", @"");
     self.view.backgroundColor = [UIColor whiteColor];
@@ -33,6 +35,12 @@
         }
         make.height.equalTo(self.imgViewDetail.mas_width).multipliedBy(1);
     }];
+    //初始化手势交互代理
+    self.interfaceTransition =
+    [BZInteractiveTransition interactiveTransitionWithType:BZInteractiveTransitionTypePop
+                                          gestureDirection:BZInteractiveTransitionGestureDirectionRight];
+    //给当前控制器的视图添加手势
+    [_interfaceTransition addPanGestureForViewController:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,7 +62,8 @@
 - (nullable id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
                                    interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController
 {
-    return nil;
+    //手势开始的时候才需要传入手势过渡代理，如果直接点击pop，应该传入空，否者无法通过点击正常pop
+    return _interfaceTransition.interation ? _interfaceTransition : nil;
 }
 
 /*

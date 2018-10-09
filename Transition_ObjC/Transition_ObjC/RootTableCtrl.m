@@ -15,6 +15,11 @@
     [super viewDidLoad];
     self.navigationItem.title = NSLocalizedString(@"自定义转场动画_ObjC", @"");
     self.tableView.tableFooterView = [UIView new];
+//    if (@available(iOS 11.0, *)) {
+//        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    } else {
+//        
+//    }
     // Uncomment the following line to preserve selection between presentations.
 //     self.clearsSelectionOnViewWillAppear = NO;
     
