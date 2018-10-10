@@ -33,6 +33,6 @@ UIViewControllerAnimatedTransitioning
  @param type  过渡类型
  @return self
  */
-- (instancetype)initWithTransitionWithType:(MagicMoveTransitionType)type;
+- (instancetype)initWithTransitionType:(MagicMoveTransitionType)type;
 
 @end

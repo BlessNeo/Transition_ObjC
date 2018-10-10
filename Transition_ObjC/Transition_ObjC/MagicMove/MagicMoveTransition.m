@@ -11,16 +11,17 @@
  动画过渡代理管理的是push还是pop
  */
 @property (nonatomic, assign) MagicMoveTransitionType type;
+
 @end
 
 @implementation MagicMoveTransition
 
 + (instancetype)transitionWithType:(MagicMoveTransitionType)type
 {
-    return [[self alloc] initWithTransitionWithType:type];
+    return [[self alloc] initWithTransitionType:type];
 }
 
-- (instancetype)initWithTransitionWithType:(MagicMoveTransitionType)type
+- (instancetype)initWithTransitionType:(MagicMoveTransitionType)type
 {
     self = [super init];
     if (self) {

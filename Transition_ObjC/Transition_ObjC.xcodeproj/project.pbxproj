@@ -31,6 +31,9 @@
 		D319DAB5216C5B410016A59D /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DAAB216C5B410016A59D /* MASViewAttribute.m */; };
 		D319DAB8216C5C910016A59D /* MagicMoveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DAB7216C5C910016A59D /* MagicMoveTransition.m */; };
 		D319DABC216CAA940016A59D /* BZInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D319DABB216CAA940016A59D /* BZInteractiveTransition.m */; };
+		D31E5E63216DE1F000F407F1 /* PresentCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D31E5E62216DE1F000F407F1 /* PresentCtrl.m */; };
+		D31E5E66216DE20A00F407F1 /* PresentShowCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D31E5E65216DE20A00F407F1 /* PresentShowCtrl.m */; };
+		D31E5E69216DE4E500F407F1 /* BZPresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D31E5E68216DE4E500F407F1 /* BZPresentTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,12 @@
 		D319DAB7216C5C910016A59D /* MagicMoveTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicMoveTransition.m; sourceTree = "<group>"; };
 		D319DABA216CAA940016A59D /* BZInteractiveTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BZInteractiveTransition.h; sourceTree = "<group>"; };
 		D319DABB216CAA940016A59D /* BZInteractiveTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BZInteractiveTransition.m; sourceTree = "<group>"; };
+		D31E5E61216DE1F000F407F1 /* PresentCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentCtrl.h; sourceTree = "<group>"; };
+		D31E5E62216DE1F000F407F1 /* PresentCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentCtrl.m; sourceTree = "<group>"; };
+		D31E5E64216DE20A00F407F1 /* PresentShowCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentShowCtrl.h; sourceTree = "<group>"; };
+		D31E5E65216DE20A00F407F1 /* PresentShowCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentShowCtrl.m; sourceTree = "<group>"; };
+		D31E5E67216DE4E500F407F1 /* BZPresentTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BZPresentTransition.h; sourceTree = "<group>"; };
+		D31E5E68216DE4E500F407F1 /* BZPresentTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BZPresentTransition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,18 +162,19 @@
 		D319DA3F216C417B0016A59D /* Transition_ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				D31E5E60216DE17800F407F1 /* Present */,
 				D319DAB9216CA9C00016A59D /* Transition */,
 				D319DA91216C5B060016A59D /* Vendor */,
 				D319DA83216C4EBA0016A59D /* MagicMove */,
 				D319DA40216C417B0016A59D /* AppDelegate.h */,
 				D319DA41216C417B0016A59D /* AppDelegate.m */,
+				D319DA80216C4BD70016A59D /* RootTableCtrl.h */,
+				D319DA81216C4BD70016A59D /* RootTableCtrl.m */,
 				D319DA46216C417B0016A59D /* Main.storyboard */,
 				D319DA49216C417D0016A59D /* Assets.xcassets */,
 				D319DA4B216C417D0016A59D /* LaunchScreen.storyboard */,
 				D319DA4E216C417D0016A59D /* Info.plist */,
 				D319DA4F216C417D0016A59D /* main.m */,
-				D319DA80216C4BD70016A59D /* RootTableCtrl.h */,
-				D319DA81216C4BD70016A59D /* RootTableCtrl.m */,
 			);
 			path = Transition_ObjC;
 			sourceTree = "<group>";
@@ -206,6 +216,7 @@
 		D319DA91216C5B060016A59D /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				D3283EC0216DEFC8003ACC27 /* Category */,
 				D319DA92216C5B410016A59D /* Masonry */,
 			);
 			path = Vendor;
@@ -250,6 +261,26 @@
 				D319DABB216CAA940016A59D /* BZInteractiveTransition.m */,
 			);
 			path = Transition;
+			sourceTree = "<group>";
+		};
+		D31E5E60216DE17800F407F1 /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				D31E5E61216DE1F000F407F1 /* PresentCtrl.h */,
+				D31E5E62216DE1F000F407F1 /* PresentCtrl.m */,
+				D31E5E64216DE20A00F407F1 /* PresentShowCtrl.h */,
+				D31E5E65216DE20A00F407F1 /* PresentShowCtrl.m */,
+				D31E5E67216DE4E500F407F1 /* BZPresentTransition.h */,
+				D31E5E68216DE4E500F407F1 /* BZPresentTransition.m */,
+			);
+			path = Present;
+			sourceTree = "<group>";
+		};
+		D3283EC0216DEFC8003ACC27 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,9 +429,12 @@
 				D319DA89216C4F440016A59D /* MagicMoveDetailCtrl.m in Sources */,
 				D319DABC216CAA940016A59D /* BZInteractiveTransition.m in Sources */,
 				D319DA8D216C54D00016A59D /* MagicMoveListCell.m in Sources */,
+				D31E5E69216DE4E500F407F1 /* BZPresentTransition.m in Sources */,
+				D31E5E63216DE1F000F407F1 /* PresentCtrl.m in Sources */,
 				D319DAB5216C5B410016A59D /* MASViewAttribute.m in Sources */,
 				D319DAB3216C5B410016A59D /* MASConstraint.m in Sources */,
 				D319DA86216C4F0E0016A59D /* MagicMoveListCtrl.m in Sources */,
+				D31E5E66216DE20A00F407F1 /* PresentShowCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
