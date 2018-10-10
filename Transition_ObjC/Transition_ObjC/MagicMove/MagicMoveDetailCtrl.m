@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.title = NSLocalizedString(@"详情", @"");
     self.view.backgroundColor = [UIColor whiteColor];
     self.imgViewDetail = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img_list"]];

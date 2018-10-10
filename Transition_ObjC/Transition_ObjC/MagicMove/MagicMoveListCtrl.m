@@ -34,11 +34,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     self.navigationItem.title = NSLocalizedString(@"列表", @"");
     self.collectionView.backgroundColor = [UIColor whiteColor];
-//    if (@available(iOS 11.0, *)) {
-//        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//    } else {
-//
-//    }
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MagicMoveListCell class])
                                                     bundle:nil]
           forCellWithReuseIdentifier:reuseIdentifier];

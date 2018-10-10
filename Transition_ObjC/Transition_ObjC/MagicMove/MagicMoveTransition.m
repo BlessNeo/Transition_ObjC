@@ -52,6 +52,7 @@
 
 - (void)doPushAnimation:(nonnull id<UIViewControllerContextTransitioning>)transitionContext
 {
+#warning 如果把 UINavigationController 的 UINavigationBar 的 translucent 设为 YES,过渡动画有问题，动画进行中会有 44px 的偏差，动画完成后会恢复正常，待 fix,暂时的解决方案是把 translucent 设为 NO
     MagicMoveListCtrl *fromCtrl =
     (MagicMoveListCtrl *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     MagicMoveDetailCtrl *toCtrl =
@@ -66,7 +67,7 @@
     //snapshotViewAfterScreenUpdates 对cell的imageView截图保存成另一个视图用于过渡
     UIView *tempView = [cell.imgViewList snapshotViewAfterScreenUpdates:NO];
     //并将视图转换到当前控制器的坐标
-    tempView.frame = [cell.imgViewList convertRect:cell.imgViewList.bounds
+    tempView.frame = [cell.imgViewList convertRect:cell.imgViewList.frame
                                             toView:containerView];
     //设置动画前的各个控件的状态
     cell.imgViewList.hidden = YES;
@@ -82,7 +83,7 @@
           initialSpringVelocity:1 / 0.55
                         options:0
                      animations:^{
-                         tempView.frame = [toCtrl.imgViewDetail convertRect:toCtrl.imgViewDetail.bounds
+                         tempView.frame = [toCtrl.imgViewDetail convertRect:toCtrl.imgViewDetail.frame
                                                                      toView:containerView];
                          toCtrl.view.alpha = 1;
     } completion:^(BOOL finished) {
@@ -119,7 +120,7 @@
           initialSpringVelocity:1 / 0.55
                         options:0
                      animations:^{
-                         tempView.frame = [cell.imgViewList convertRect:cell.imgViewList.bounds
+                         tempView.frame = [cell.imgViewList convertRect:cell.imgViewList.frame
                                                                  toView:containerView];
                          fromCtrl.view.alpha = 0;
                      } completion:^(BOOL finished) {

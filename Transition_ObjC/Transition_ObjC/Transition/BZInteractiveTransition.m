@@ -4,6 +4,7 @@
 
 @interface BZInteractiveTransition()
 //如果把 weak 改为 strong 将导致 ctrl 无法 dealloc,当 pop 到前面页面时 APP crash 掉
+#warning 要搞明白
 @property (nonatomic, weak) UIViewController *ctrl;
 ///手势方向
 @property (nonatomic, assign) BZInteractiveTransitionGestureDirection direction;
@@ -94,7 +95,7 @@
             //手势完成后结束标记并且判断移动距离是否达到要求，过则 finishInteractiveTransition 完成转场操作
             //否则取消转场操作
             self.interation = NO;
-            if (percent > 0.2) {
+            if (percent > 0.3) {
                 [self finishInteractiveTransition];
             } else {
                 [self cancelInteractiveTransition];
