@@ -3,6 +3,7 @@
 #import "RootTableCtrl.h"
 #import "MagicMoveListCtrl.h"
 #import "PresentCtrl.h"
+#import "CircleSpreadCtrl.h"
 
 @interface RootTableCtrl ()
 @property (nonatomic, strong) NSArray *arrData;
@@ -39,7 +40,8 @@
 {
     if (!_arrData) {
         _arrData = @[NSLocalizedString(@"神奇移动", @""),
-                     NSLocalizedString(@"弹性 Pop", @"")];
+                     NSLocalizedString(@"弹性 Pop", @""),
+                     NSLocalizedString(@"小圆点扩散", @"")];
     }
     return _arrData;
 }
@@ -48,7 +50,8 @@
 {
     if (!_arrCtrls) {
         _arrCtrls = @[@"MagicMoveListCtrl",
-                      @"PresentCtrl"];
+                      @"PresentCtrl",
+                      @"CircleSpreadCtrl"];
     }
     return _arrCtrls;
 }

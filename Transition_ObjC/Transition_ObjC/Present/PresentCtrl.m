@@ -15,6 +15,11 @@ PresentShowCtrlDelegate
 
 @implementation PresentCtrl
 
+- (void)dealloc
+{
+    NSLog(@"这个类%@ destroyed",NSStringFromClass([self class]));
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.view.layer.cornerRadius = 10;
@@ -45,7 +50,7 @@ PresentShowCtrlDelegate
     _interactivePresent =
     [BZInteractiveTransition interactiveTransitionWithType:BZInteractiveTransitionTypePresent
                                           gestureDirection:BZInteractiveTransitionGestureDirectionUp];
-    typeof (self) weakSelf = self;
+    __weak typeof (self) weakSelf = self;
     _interactivePresent.configPresent = ^(){
         [weakSelf present];
     };
