@@ -8,10 +8,33 @@
 
 @implementation CircleSpreadShowCtrl
 
+- (void)dealloc
+{
+    NSLog(@"这个类%@ destroyed",NSStringFromClass([self class]));
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor blueColor];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:NSLocalizedString(@"点我或向下滑动 dismiss", @"")
+            forState:UIControlStateNormal];
+    [button addTarget:self
+               action:@selector(dismiss)
+     forControlEvents:UIControlEventTouchUpInside];
+    [button setTitleColor:[UIColor whiteColor]
+                 forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, self.view.frame.size.height - 200,
+                              self.view.frame.size.width, 50);
+    [self.view addSubview:button];
 }
+
+- (void)dismiss
+{
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
 
 /*
 #pragma mark - Navigation
