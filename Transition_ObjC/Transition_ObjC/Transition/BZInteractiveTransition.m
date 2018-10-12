@@ -95,7 +95,7 @@
             //手势完成后结束标记并且判断移动距离是否达到要求，过则 finishInteractiveTransition 完成转场操作
             //否则取消转场操作
             self.interation = NO;
-            if (percent > 0.1) {
+            if (percent > 0.15) {
                 [self finishInteractiveTransition];
             } else {
                 [self cancelInteractiveTransition];

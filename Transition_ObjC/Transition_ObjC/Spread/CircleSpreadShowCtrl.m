@@ -2,11 +2,13 @@
 
 #import "CircleSpreadShowCtrl.h"
 #import "BZCircleSpreadTransition.h"
+#import "BZInteractiveTransition.h"
 
 @interface CircleSpreadShowCtrl ()
 <
 UIViewControllerTransitioningDelegate
 >
+@property (nonatomic, strong) BZInteractiveTransition *interactiveTransition;
 
 @end
 
@@ -41,6 +43,11 @@ UIViewControllerTransitioningDelegate
     button.frame = CGRectMake(0, self.view.frame.size.height - 200,
                               self.view.frame.size.width, 50);
     [self.view addSubview:button];
+    //手势交互
+    self.interactiveTransition =
+    [BZInteractiveTransition interactiveTransitionWithType:BZInteractiveTransitionTypeDismiss
+                                          gestureDirection:BZInteractiveTransitionGestureDirectionDown];
+    [self.interactiveTransition addPanGestureForViewController:self];
 }
 
 - (void)dismiss
@@ -59,6 +66,11 @@ UIViewControllerTransitioningDelegate
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
     return [BZCircleSpreadTransition transitionWithType:BZCircleSpreadTransitionTypeDismiss];
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
+{
+    return _interactiveTransition.interation ? _interactiveTransition : nil;
 }
 
 
