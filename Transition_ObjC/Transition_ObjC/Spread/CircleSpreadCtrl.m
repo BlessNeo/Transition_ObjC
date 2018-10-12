@@ -6,6 +6,7 @@
 #import "AppMacro.h"
 
 @interface CircleSpreadCtrl ()
+@property (nonatomic, strong) UIButton *button;
 
 @end
 
