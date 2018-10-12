@@ -32,7 +32,11 @@ PresentShowCtrlDelegate
     [self.view addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
-        make.top.equalTo(self.view.mas_top).offset(20);
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(20);
+        } else {
+            make.top.equalTo(self.view.mas_top).offset(20);
+        }
         make.size.mas_equalTo(CGSizeMake(250, 250));
     }];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

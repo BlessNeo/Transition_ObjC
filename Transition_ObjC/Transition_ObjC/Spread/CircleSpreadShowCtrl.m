@@ -1,8 +1,12 @@
 //This is my custom file header.CircleSpreadShowCtrl.m,created on 2018/10/11.
 
 #import "CircleSpreadShowCtrl.h"
+#import "BZCircleSpreadTransition.h"
 
 @interface CircleSpreadShowCtrl ()
+<
+UIViewControllerTransitioningDelegate
+>
 
 @end
 
@@ -11,6 +15,16 @@
 - (void)dealloc
 {
     NSLog(@"这个类%@ destroyed",NSStringFromClass([self class]));
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.transitioningDelegate = self;
+        self.modalPresentationStyle = UIModalPresentationCustom;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -33,6 +47,18 @@
 {
     [self dismissViewControllerAnimated:YES
                              completion:nil];
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    return [BZCircleSpreadTransition transitionWithType:BZCircleSpreadTransitionTypePresent];
+}
+
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return [BZCircleSpreadTransition transitionWithType:BZCircleSpreadTransitionTypeDismiss];
 }
 
 

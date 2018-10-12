@@ -3,9 +3,9 @@
 #import "CircleSpreadCtrl.h"
 #import "Masonry.h"
 #import "CircleSpreadShowCtrl.h"
+#import "AppMacro.h"
 
 @interface CircleSpreadCtrl ()
-@property (nonatomic, strong) UIButton *button;
 
 @end
 
@@ -39,13 +39,35 @@
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(CGPointMake(0, 0)).priorityLow();
         make.size.mas_equalTo(CGSizeMake(80, 80));
-        make.left.greaterThanOrEqualTo(self.view);
-        make.top.greaterThanOrEqualTo(self.view);
-        make.bottom.right.lessThanOrEqualTo(self.view);
+        if (@available(iOS 11.0, *)) {
+            make.top.greaterThanOrEqualTo(self.view.mas_safeAreaLayoutGuideTop);
+            make.left.greaterThanOrEqualTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.bottom.lessThanOrEqualTo(self.view.mas_safeAreaLayoutGuideBottom);
+            make.right.lessThanOrEqualTo(self.view.mas_safeAreaLayoutGuideRight);
+        } else {
+            make.bottom.right.lessThanOrEqualTo(self.view);
+            make.left.greaterThanOrEqualTo(self.view);
+            make.top.greaterThanOrEqualTo(self.view);
+        }
     }];
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                           action:@selector(pan:)];
     [button addGestureRecognizer:pan];
+}
+
+- (CGRect)buttonFrame
+{
+    // navigationbar translucent 为 NO, UIView 的原点 y 为导航栏 maxY
+    // 而动画 [transitionContext containerView] 的原点是(0,0)
+    if (@available(iOS 11.0, *)) {
+        return CGRectMake(self.button.frame.origin.x,
+                          self.button.frame.origin.y + kStatusBarHeight + (self.navigationController.navigationBar.prefersLargeTitles ? kNavigationBarLargeTitleHeight : kNavigationBarHeight),
+                          self.button.frame.size.width, self.button.frame.size.height);
+    } else {
+        return CGRectMake(self.button.frame.origin.x,
+                          self.button.frame.origin.y + kStatusBarHeight + kNavigationBarHeight,
+                          self.button.frame.size.width, self.button.frame.size.height);
+    }
 }
 
 - (void)present
@@ -58,6 +80,7 @@
 
 - (void)pan:(UIPanGestureRecognizer *)panGesture
 {
+#warning 待研究
     CGPoint translation = [panGesture translationInView:self.view];
     CGPoint newCenter = CGPointMake(panGesture.view.center.x+ translation.x,
                                     panGesture.view.center.y + translation.y);

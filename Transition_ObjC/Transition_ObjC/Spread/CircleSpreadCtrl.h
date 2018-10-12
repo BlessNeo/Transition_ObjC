@@ -5,6 +5,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CircleSpreadCtrl : UIViewController
+@property (nonatomic, assign) CGRect buttonFrame;
+@property (nonatomic, strong) UIButton *button;
 
 @end
 

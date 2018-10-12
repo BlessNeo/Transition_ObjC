@@ -121,6 +121,7 @@
 		D31E5E65216DE20A00F407F1 /* PresentShowCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentShowCtrl.m; sourceTree = "<group>"; };
 		D31E5E67216DE4E500F407F1 /* BZPresentTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BZPresentTransition.h; sourceTree = "<group>"; };
 		D31E5E68216DE4E500F407F1 /* BZPresentTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BZPresentTransition.m; sourceTree = "<group>"; };
+		D35F3E3021704D5B008358F3 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +199,7 @@
 				D319DA4B216C417D0016A59D /* LaunchScreen.storyboard */,
 				D319DA4E216C417D0016A59D /* Info.plist */,
 				D319DA4F216C417D0016A59D /* main.m */,
+				D35F3E3021704D5B008358F3 /* AppMacro.h */,
 			);
 			path = Transition_ObjC;
 			sourceTree = "<group>";
