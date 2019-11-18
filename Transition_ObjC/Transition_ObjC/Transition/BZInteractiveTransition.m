@@ -75,6 +75,8 @@
         default:
             break;
     }
+    //稳定进度区间，让它在 0.0（未完成）~1.0（已完成）之间
+    percent = MIN(1.0, MAX(0.0, percent));
     
     switch (panGesture.state) {
         case UIGestureRecognizerStateBegan:
@@ -91,6 +93,7 @@
             break;
             
         case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateCancelled:
         {
             //手势完成后结束标记并且判断移动距离是否达到要求，过则 finishInteractiveTransition 完成转场操作
             //否则取消转场操作
